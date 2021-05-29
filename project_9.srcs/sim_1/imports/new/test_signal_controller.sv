@@ -30,7 +30,8 @@ logic reset;
 logic start;
 logic [31:0] input_ram_address;
 logic [31:0] output_ram_address;
-logic [3:0] status;
+logic [31:0] status1;
+logic [31:0] status2;
 
 logic [31:0] addrb;
 logic clkb;
@@ -53,7 +54,8 @@ signal_controller  signal_controller_inst(
 	.START(start),
 	.INPUT_RAM_ADDRESS(input_ram_address),
 	.OUTPUT_RAM_ADDRESS(output_ram_address),
-	.STATUS(status),
+	.STATUS1(status1),
+	.STATUS2(status2),
 
 	.ADDRB(addrb),
 	.CLKB(clkb),
