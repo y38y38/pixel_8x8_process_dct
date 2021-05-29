@@ -1,0 +1,1 @@
+-wto "2080442275884079a5a150b9dfeba969" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "uvm" -L "xilinx_vip" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "signal_controller_wrapper_behav" "xil_defaultlib.signal_controller_wrapper" "xil_defaultlib.glbl" -log "elaborate.log" 

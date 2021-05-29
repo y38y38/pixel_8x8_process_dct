@@ -1,0 +1,314 @@
+#-----------------------------------------------------------
+# Vivado v2020.2.2 (64-bit)
+# SW Build 3118627 on Tue Feb  9 05:13:49 MST 2021
+# IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+# Start of session at: Wed May 26 22:37:46 2021
+# Process ID: 54510
+# Current directory: /home/y/fpga/project_9/project_9.runs/design_1_signal_controller_wr_0_0_synth_1
+# Command line: vivado -log design_1_signal_controller_wr_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_signal_controller_wr_0_0.tcl
+# Log file: /home/y/fpga/project_9/project_9.runs/design_1_signal_controller_wr_0_0_synth_1/design_1_signal_controller_wr_0_0.vds
+# Journal file: /home/y/fpga/project_9/project_9.runs/design_1_signal_controller_wr_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_signal_controller_wr_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/y/fpga/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top design_1_signal_controller_wr_0_0 -part xczu3eg-sbva484-1-i -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'design_1_signal_controller_wr_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 54588
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2711.371 ; gain = 29.906 ; free physical = 689 ; free virtual = 7347
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_signal_controller_wr_0_0' [/home/y/fpga/project_9/project_9.gen/sources_1/bd/design_1/ip/design_1_signal_controller_wr_0_0/synth/design_1_signal_controller_wr_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'signal_controller_wrapper' [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/signal_controller_wrapper.v:23]
+INFO: [Synth 8-6157] synthesizing module 'signal_controller' [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/signal_controller.sv:23]
+	Parameter STATE_IDLE bound to: 4'b0000 
+	Parameter STATE_READ bound to: 4'b0001 
+	Parameter STATE_READING bound to: 4'b0010 
+	Parameter STATE_CALC bound to: 4'b0011 
+	Parameter STATE_WRITE bound to: 4'b0100 
+	Parameter STATE_WRITEING bound to: 4'b0101 
+INFO: [Synth 8-6157] synthesizing module 'calc' [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'calc' (1#1) [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:23]
+WARNING: [Synth 8-324] index 8 out of range [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/signal_controller.sv:169]
+WARNING: [Synth 8-324] index 8 out of range [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/signal_controller.sv:170]
+INFO: [Synth 8-6155] done synthesizing module 'signal_controller' (2#1) [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/signal_controller.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'signal_controller_wrapper' (3#1) [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/signal_controller_wrapper.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_signal_controller_wr_0_0' (4#1) [/home/y/fpga/project_9/project_9.gen/sources_1/bd/design_1/ip/design_1_signal_controller_wr_0_0/synth/design_1_signal_controller_wr_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2778.277 ; gain = 96.812 ; free physical = 1461 ; free virtual = 8117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2796.090 ; gain = 114.625 ; free physical = 1457 ; free virtual = 8113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2796.090 ; gain = 114.625 ; free physical = 1457 ; free virtual = 8113
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2796.090 ; gain = 0.000 ; free physical = 1449 ; free virtual = 8104
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2939.059 ; gain = 0.000 ; free physical = 1379 ; free virtual = 8041
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2962.871 ; gain = 23.812 ; free physical = 1378 ; free virtual = 8039
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2962.871 ; gain = 281.406 ; free physical = 1452 ; free virtual = 8109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sbva484-1-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2962.871 ; gain = 281.406 ; free physical = 1452 ; free virtual = 8109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2962.871 ; gain = 281.406 ; free physical = 1452 ; free virtual = 8109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2962.871 ; gain = 281.406 ; free physical = 1446 ; free virtual = 8102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 66    
+	               16 Bit    Registers := 64    
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 2     
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 32    
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   3 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   5 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 8     
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 156   
+	   3 Input    1 Bit        Muxes := 71    
+	   5 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2962.871 ; gain = 281.406 ; free physical = 1412 ; free virtual = 8076
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:47 . Memory (MB): peak = 3332.316 ; gain = 650.852 ; free physical = 928 ; free virtual = 7531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:47 . Memory (MB): peak = 3333.316 ; gain = 651.852 ; free physical = 927 ; free virtual = 7530
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[0].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[1].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[2].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[3].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[4].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[5].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[6].genblk1[7].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[0].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[1].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[2].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[3].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[4].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[5].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+INFO: [Synth 8-4765] Removing register instance (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[6].output_data_enable_reg ) from module (design_1_signal_controller_wr_0_0) as it is equivalent to (\inst/signal_controller_inst/calc_inst/genblk2[7].genblk1[7].output_data_enable_reg ) and driving same net [/home/y/fpga/project_9/project_9.srcs/sources_1/imports/new/calc.sv:52]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:48 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 925 ; free virtual = 7523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:51 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 872 ; free virtual = 7493
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:51 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 872 ; free virtual = 7494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:51 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 872 ; free virtual = 7493
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:51 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 872 ; free virtual = 7493
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:52 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 872 ; free virtual = 7493
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:52 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 871 ; free virtual = 7493
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |    12|
+|2     |LUT1   |     2|
+|3     |LUT2   |    25|
+|4     |LUT3   |    64|
+|5     |LUT4   |    12|
+|6     |LUT5   |   345|
+|7     |LUT6   |   402|
+|8     |MUXF7  |   128|
+|9     |FDRE   |  2139|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:52 . Memory (MB): peak = 3362.363 ; gain = 680.898 ; free physical = 871 ; free virtual = 7493
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 3362.363 ; gain = 514.117 ; free physical = 910 ; free virtual = 7532
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:52 . Memory (MB): peak = 3362.371 ; gain = 680.898 ; free physical = 910 ; free virtual = 7532
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3374.332 ; gain = 0.000 ; free physical = 996 ; free virtual = 7616
+INFO: [Netlist 29-17] Analyzing 140 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3415.254 ; gain = 0.000 ; free physical = 878 ; free virtual = 7547
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+89 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:03 . Memory (MB): peak = 3415.254 ; gain = 1011.023 ; free physical = 1022 ; free virtual = 7691
+INFO: [Common 17-1381] The checkpoint '/home/y/fpga/project_9/project_9.runs/design_1_signal_controller_wr_0_0_synth_1/design_1_signal_controller_wr_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/y/fpga/project_9/project_9.runs/design_1_signal_controller_wr_0_0_synth_1/design_1_signal_controller_wr_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_signal_controller_wr_0_0_utilization_synth.rpt -pb design_1_signal_controller_wr_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May 26 22:39:08 2021...
