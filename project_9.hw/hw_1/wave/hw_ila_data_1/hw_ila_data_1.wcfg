@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/y/fpga/project_9/project_9.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="/home/y/fpga/dct/pixel_8x8_process/project_9.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
@@ -15,69 +15,39 @@
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="345"></NameColumnWidth>
-      <ValueColumnWidth column_width="77"></ValueColumnWidth>
+      <ValueColumnWidth column_width="65"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="4" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0_DINB">
+   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0/DINB">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_DINB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_DINB[31:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0/DINB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DINB[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0_WEB">
+   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0/STATUS1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_WEB[3:0]</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_WEB[3:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0/STATUS1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">STATUS1[0:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0_ADDRB">
+   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0/STATUS2">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_ADDRB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_ADDRB[31:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0/STATUS2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">STATUS2[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="design_1_i/blk_mem_gen_0_doutb">
+   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0/WEB">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/blk_mem_gen_0_doutb[31:0]</obj_property>
-      <obj_property name="ObjectShortName">blk_mem_gen_0_doutb[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="design_1_i/signal_controller_wr_0_ENB">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_ENB</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_ENB</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="design_1_i/signal_controller_wr_0_RSTB">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_RSTB</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_RSTB</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0_STATUS1">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_STATUS1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_STATUS1[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="design_1_i/signal_controller_wr_0_STATUS2">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0_STATUS2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">signal_controller_wr_0_STATUS2[31:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/signal_controller_wr_0/WEB[3:3]</obj_property>
+      <obj_property name="ObjectShortName">WEB[3:3]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>

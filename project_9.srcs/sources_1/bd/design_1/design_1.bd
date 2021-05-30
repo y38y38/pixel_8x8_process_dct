@@ -14,10 +14,10 @@
       "zynq_ultra_ps_e_0": "",
       "blk_mem_gen_0": "",
       "axi_bram_ctrl_0": "",
-      "myip_0": "",
       "axi_smc": "",
       "rst_ps8_0_100M": "",
-      "signal_controller_wr_0": ""
+      "signal_controller_wr_0": "",
+      "myip_0": ""
     },
     "components": {
       "zynq_ultra_ps_e_0": {
@@ -1525,12 +1525,6 @@
           }
         }
       },
-      "myip_0": {
-        "vlnv": "user.org:user:myip:1.1",
-        "xci_name": "design_1_myip_0_0",
-        "xci_path": "ip/design_1_myip_0_0/design_1_myip_0_0.xci",
-        "inst_hier_path": "myip_0"
-      },
       "axi_smc": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "xci_name": "design_1_axi_smc_0",
@@ -1718,13 +1712,19 @@
             "right": "0"
           }
         }
+      },
+      "myip_0": {
+        "vlnv": "user.org:user:myip:1.11",
+        "xci_name": "design_1_myip_0_0",
+        "xci_path": "ip/design_1_myip_0_0/design_1_myip_0_0.xci",
+        "inst_hier_path": "myip_0"
       }
     },
     "interface_nets": {
-      "zynq_ultra_ps_e_0_M_AXI_HPM0_FPD": {
+      "axi_bram_ctrl_0_BRAM_PORTA": {
         "interface_ports": [
-          "zynq_ultra_ps_e_0/M_AXI_HPM0_FPD",
-          "axi_smc/S00_AXI"
+          "axi_bram_ctrl_0/BRAM_PORTA",
+          "blk_mem_gen_0/BRAM_PORTA"
         ]
       },
       "axi_smc_M01_AXI": {
@@ -1733,16 +1733,16 @@
           "myip_0/S00_AXI"
         ]
       },
+      "zynq_ultra_ps_e_0_M_AXI_HPM0_FPD": {
+        "interface_ports": [
+          "zynq_ultra_ps_e_0/M_AXI_HPM0_FPD",
+          "axi_smc/S00_AXI"
+        ]
+      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
           "axi_bram_ctrl_0/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTA": {
-        "interface_ports": [
-          "axi_bram_ctrl_0/BRAM_PORTA",
-          "blk_mem_gen_0/BRAM_PORTA"
         ]
       }
     },
@@ -1814,9 +1814,9 @@
           "axi_smc/aclk",
           "axi_bram_ctrl_0/s_axi_aclk",
           "rst_ps8_0_100M/slowest_sync_clk",
-          "myip_0/s00_axi_aclk",
           "zynq_ultra_ps_e_0/maxihpm1_fpd_aclk",
-          "signal_controller_wr_0/CLOCK"
+          "signal_controller_wr_0/CLOCK",
+          "myip_0/s00_axi_aclk"
         ]
       },
       "zynq_ultra_ps_e_0_pl_resetn0": {
@@ -1830,8 +1830,8 @@
           "rst_ps8_0_100M/peripheral_aresetn",
           "axi_bram_ctrl_0/s_axi_aresetn",
           "axi_smc/aresetn",
-          "myip_0/s00_axi_aresetn",
-          "signal_controller_wr_0/RESET"
+          "signal_controller_wr_0/RESET",
+          "myip_0/s00_axi_aresetn"
         ]
       },
       "signal_controller_wr_0_STATUS1": {

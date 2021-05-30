@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2.2 (lin64) Build 3118627 Tue Feb  9 05:13:49 MST 2021
-// Date        : Sun May  9 19:03:06 2021
+// Date        : Sat May 29 23:28:19 2021
 // Host        : y-Bl running 64-bit Ubuntu 20.10
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_smc_0 -prefix
-//               design_1_axi_smc_0_ design_1_axi_smc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               /home/y/fpga/dct/pixel_8x8_process/project_9.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_stub.v
 // Design      : design_1_axi_smc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xczu3eg-sbva484-1-i

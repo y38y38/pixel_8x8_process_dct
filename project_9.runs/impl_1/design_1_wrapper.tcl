@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/y/fpga/project_9/project_9.runs/impl_1/design_1_wrapper.tcl"
+  variable script "/home/y/fpga/dct/pixel_8x8_process/project_9.runs/impl_1/design_1_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -124,8 +124,12 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
+  set_param power.BramSDPPropagationFix 1
   set_param tcl.collectionResultDisplayLimit 0
   set_param xicom.use_bs_reader 1
+  set_param power.enableUnconnectedCarry8PinPower 1
+  set_param power.enableCarry8RouteBelPower 1
+  set_param power.enableLutRouteBelPower 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu3eg-sbva484-1-i
   set_property board_part avnet.com:ultra96v2:part0:1.2 [current_project]
@@ -133,22 +137,22 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/y/fpga/project_9/project_9.cache/wt [current_project]
-  set_property parent.project_path /home/y/fpga/project_9/project_9.xpr [current_project]
-  set_property ip_repo_paths /home/y/fpga/ip_repo [current_project]
+  set_property webtalk.parent_dir /home/y/fpga/dct/pixel_8x8_process/project_9.cache/wt [current_project]
+  set_property parent.project_path /home/y/fpga/dct/pixel_8x8_process/project_9.xpr [current_project]
+  set_property ip_repo_paths /home/y/fpga/dct/myip_start [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/y/fpga/project_9/project_9.cache/ip [current_project]
+  set_property ip_output_repo /home/y/fpga/dct/pixel_8x8_process/project_9.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/y/fpga/project_9/project_9.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet /home/y/fpga/dct/pixel_8x8_process/project_9.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/y/fpga/project_9/project_9.srcs/sources_1/bd/design_1/design_1.bd
+  add_files /home/y/fpga/dct/pixel_8x8_process/project_9.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/y/fpga/project_9/project_9.srcs/constrs_1/new/project_9.xdc
+  read_xdc /home/y/fpga/dct/pixel_8x8_process/project_9.srcs/constrs_1/new/project_9.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

@@ -2,11 +2,11 @@
 # Vivado v2020.2.2 (64-bit)
 # SW Build 3118627 on Tue Feb  9 05:13:49 MST 2021
 # IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
-# Start of session at: Sat May  8 22:51:18 2021
-# Process ID: 48637
-# Current directory: /home/y/fpga/project_9/project_9.runs/design_1_rst_ps8_0_100M_0_synth_1
+# Start of session at: Sat May 29 14:52:51 2021
+# Process ID: 57566
+# Current directory: /home/y/fpga/dct/pixel_8x8_process/project_9.runs/design_1_rst_ps8_0_100M_0_synth_1
 # Command line: vivado -log design_1_rst_ps8_0_100M_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_rst_ps8_0_100M_0.tcl
-# Log file: /home/y/fpga/project_9/project_9.runs/design_1_rst_ps8_0_100M_0_synth_1/design_1_rst_ps8_0_100M_0.vds
-# Journal file: /home/y/fpga/project_9/project_9.runs/design_1_rst_ps8_0_100M_0_synth_1/vivado.jou
+# Log file: /home/y/fpga/dct/pixel_8x8_process/project_9.runs/design_1_rst_ps8_0_100M_0_synth_1/design_1_rst_ps8_0_100M_0.vds
+# Journal file: /home/y/fpga/dct/pixel_8x8_process/project_9.runs/design_1_rst_ps8_0_100M_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source design_1_rst_ps8_0_100M_0.tcl -notrace

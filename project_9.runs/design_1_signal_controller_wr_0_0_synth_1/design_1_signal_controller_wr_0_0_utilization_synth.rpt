@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2.2 (lin64) Build 3118627 Tue Feb  9 05:13:49 MST 2021
-| Date         : Wed May 26 22:39:07 2021
+| Date         : Sat May 29 23:26:32 2021
 | Host         : y-Bl running 64-bit Ubuntu 20.10
 | Command      : report_utilization -file design_1_signal_controller_wr_0_0_utilization_synth.rpt -pb design_1_signal_controller_wr_0_0_utilization_synth.pb
 | Design       : design_1_signal_controller_wr_0_0
@@ -28,20 +28,20 @@ Table of Contents
 1. CLB Logic
 ------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| CLB LUTs*               |  696 |     0 |     70560 |  0.99 |
-|   LUT as Logic          |  696 |     0 |     70560 |  0.99 |
-|   LUT as Memory         |    0 |     0 |     28800 |  0.00 |
-| CLB Registers           | 2139 |     0 |    141120 |  1.52 |
-|   Register as Flip Flop | 2139 |     0 |    141120 |  1.52 |
-|   Register as Latch     |    0 |     0 |    141120 |  0.00 |
-| CARRY8                  |   12 |     0 |      8820 |  0.14 |
-| F7 Muxes                |  128 |     0 |     35280 |  0.36 |
-| F8 Muxes                |    0 |     0 |     17640 |  0.00 |
-| F9 Muxes                |    0 |     0 |      8820 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++-------------------------+-------+-------+-----------+-------+
+|        Site Type        |  Used | Fixed | Available | Util% |
++-------------------------+-------+-------+-----------+-------+
+| CLB LUTs*               | 42558 |     0 |     70560 | 60.31 |
+|   LUT as Logic          | 42558 |     0 |     70560 | 60.31 |
+|   LUT as Memory         |     0 |     0 |     28800 |  0.00 |
+| CLB Registers           | 14384 |     0 |    141120 | 10.19 |
+|   Register as Flip Flop | 14384 |     0 |    141120 | 10.19 |
+|   Register as Latch     |     0 |     0 |    141120 |  0.00 |
+| CARRY8                  |  5404 |     0 |      8820 | 61.27 |
+| F7 Muxes                |   128 |     0 |     35280 |  0.36 |
+| F8 Muxes                |     0 |     0 |     17640 |  0.00 |
+| F9 Muxes                |     0 |     0 |      8820 |  0.00 |
++-------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -60,7 +60,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 2139  |          Yes |       Reset |            - |
+| 14384 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -144,19 +144,19 @@ Table of Contents
 8. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     | 2139 |            Register |
-| LUT6     |  402 |                 CLB |
-| LUT5     |  345 |                 CLB |
-| MUXF7    |  128 |                 CLB |
-| LUT3     |   64 |                 CLB |
-| LUT2     |   25 |                 CLB |
-| LUT4     |   12 |                 CLB |
-| CARRY8   |   12 |                 CLB |
-| LUT1     |    2 |                 CLB |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT2     | 29176 |                 CLB |
+| FDRE     | 14384 |            Register |
+| LUT3     |  5652 |                 CLB |
+| CARRY8   |  5404 |                 CLB |
+| LUT4     |  5127 |                 CLB |
+| LUT6     |  3448 |                 CLB |
+| LUT5     |  3079 |                 CLB |
+| LUT1     |   882 |                 CLB |
+| MUXF7    |   128 |                 CLB |
++----------+-------+---------------------+
 
 
 9. Black Boxes

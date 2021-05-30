@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2.2 (lin64) Build 3118627 Tue Feb  9 05:13:49 MST 2021
-//Date        : Sun May 16 20:04:21 2021
+//Date        : Sat May 29 23:21:37 2021
 //Host        : y-Bl running 64-bit Ubuntu 20.10
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -80,6 +80,8 @@ module design_1
   wire [31:0]signal_controller_wr_0_DINB;
   wire signal_controller_wr_0_ENB;
   wire signal_controller_wr_0_RSTB;
+  wire [31:0]signal_controller_wr_0_STATUS1;
+  wire [31:0]signal_controller_wr_0_STATUS2;
   wire [3:0]signal_controller_wr_0_WEB;
   wire [39:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR;
   wire [1:0]zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARBURST;
@@ -275,8 +277,8 @@ module design_1
        (.INPUT_ADDRESS(myip_0_INPUT_ADDRESS),
         .OUTPUT_ADDRESS(myip_0_OUTPUT_ADDRESS),
         .START(myip_0_START),
-        .STATUS1({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .STATUS2({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .STATUS1(signal_controller_wr_0_STATUS1),
+        .STATUS2(signal_controller_wr_0_STATUS2),
         .s00_axi_aclk(zynq_ultra_ps_e_0_pl_clk0),
         .s00_axi_araddr(axi_smc_M01_AXI_ARADDR),
         .s00_axi_aresetn(rst_ps8_0_100M_peripheral_aresetn),
@@ -317,6 +319,8 @@ module design_1
         .RESET(rst_ps8_0_100M_peripheral_aresetn),
         .RSTB(signal_controller_wr_0_RSTB),
         .START(myip_0_START),
+        .STATUS1(signal_controller_wr_0_STATUS1),
+        .STATUS2(signal_controller_wr_0_STATUS2),
         .WEB(signal_controller_wr_0_WEB));
   design_1_zynq_ultra_ps_e_0_0 zynq_ultra_ps_e_0
        (.maxigp0_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),

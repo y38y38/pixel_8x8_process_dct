@@ -74,7 +74,7 @@ initial begin
 	#STEP;
 	reset = 1'b1;
 	input_ram_address = 32'h0;
-	output_ram_address = 32'h40;
+	output_ram_address = 32'h80;
 	doutb <= 32'haaaaaaaa;
 	start = 1'b1;
 	#STEP;

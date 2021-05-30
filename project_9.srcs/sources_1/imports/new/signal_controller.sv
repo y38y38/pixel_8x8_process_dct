@@ -104,8 +104,10 @@ module signal_controller(
 	);
 
 	assign ADDRB = ram_address;
-	assign STATUS1 = (block[0][0] | block[0][1]<<16);
-	assign STATUS2 = (block[0][2] | block[0][3]<<16);
+	assign STATUS1[0] = calc_output_data_enable;
+	assign STATUS1[31:1] = 31'hEFFFFFFF;
+	assign STATUS2[3:0] = state;
+	assign STATUS2[31:4] = 28'hFFFFFFF;
 
 	always @( posedge CLOCK) begin
 		if (RESET == 1'b0) begin

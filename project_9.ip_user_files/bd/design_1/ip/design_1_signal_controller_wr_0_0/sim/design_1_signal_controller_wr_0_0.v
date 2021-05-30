@@ -60,7 +60,8 @@ module design_1_signal_controller_wr_0_0 (
   START,
   INPUT_RAM_ADDRESS,
   OUTPUT_RAM_ADDRESS,
-  STATUS,
+  STATUS1,
+  STATUS2,
   ADDRB,
   CLKB,
   DINB,
@@ -79,7 +80,8 @@ input wire RESET;
 input wire START;
 input wire [31 : 0] INPUT_RAM_ADDRESS;
 input wire [31 : 0] OUTPUT_RAM_ADDRESS;
-output wire [3 : 0] STATUS;
+output wire [31 : 0] STATUS1;
+output wire [31 : 0] STATUS2;
 output wire [31 : 0] ADDRB;
 output wire CLKB;
 output wire [31 : 0] DINB;
@@ -94,7 +96,8 @@ output wire [3 : 0] WEB;
     .START(START),
     .INPUT_RAM_ADDRESS(INPUT_RAM_ADDRESS),
     .OUTPUT_RAM_ADDRESS(OUTPUT_RAM_ADDRESS),
-    .STATUS(STATUS),
+    .STATUS1(STATUS1),
+    .STATUS2(STATUS2),
     .ADDRB(ADDRB),
     .CLKB(CLKB),
     .DINB(DINB),

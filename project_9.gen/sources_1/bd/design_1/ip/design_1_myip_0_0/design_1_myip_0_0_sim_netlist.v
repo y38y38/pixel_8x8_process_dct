@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2.2 (lin64) Build 3118627 Tue Feb  9 05:13:49 MST 2021
-// Date        : Sat May  8 22:53:18 2021
+// Date        : Sat May 29 23:25:30 2021
 // Host        : y-Bl running 64-bit Ubuntu 20.10
 // Command     : write_verilog -force -mode funcsim
-//               /home/y/fpga/project_9/project_9.gen/sources_1/bd/design_1/ip/design_1_myip_0_0/design_1_myip_0_0_sim_netlist.v
+//               /home/y/fpga/dct/pixel_8x8_process/project_9.gen/sources_1/bd/design_1/ip/design_1_myip_0_0/design_1_myip_0_0_sim_netlist.v
 // Design      : design_1_myip_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -73,6 +73,7 @@ module design_1_myip_0_0
   wire [31:0]OUTPUT_ADDRESS;
   wire START;
   wire [31:0]STATUS1;
+  wire [31:0]STATUS2;
   wire s00_axi_aclk;
   wire [4:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -102,9 +103,9 @@ module design_1_myip_0_0
         .OUTPUT_ADDRESS(OUTPUT_ADDRESS),
         .START(START),
         .STATUS1(STATUS1),
+        .STATUS2(STATUS2),
         .S_AXI_ARREADY(s00_axi_arready),
         .S_AXI_AWREADY(s00_axi_awready),
-        .S_AXI_WREADY(s00_axi_wready),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[4:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -117,6 +118,7 @@ module design_1_myip_0_0
         .s00_axi_rready(s00_axi_rready),
         .s00_axi_rvalid(s00_axi_rvalid),
         .s00_axi_wdata(s00_axi_wdata),
+        .s00_axi_wready(s00_axi_wready),
         .s00_axi_wstrb(s00_axi_wstrb),
         .s00_axi_wvalid(s00_axi_wvalid));
 endmodule
@@ -124,8 +126,8 @@ endmodule
 (* ORIG_REF_NAME = "myip_v1_0" *) 
 module design_1_myip_0_0_myip_v1_0
    (START,
-    S_AXI_WREADY,
     S_AXI_AWREADY,
+    s00_axi_wready,
     INPUT_ADDRESS,
     OUTPUT_ADDRESS,
     S_AXI_ARREADY,
@@ -134,19 +136,20 @@ module design_1_myip_0_0_myip_v1_0
     s00_axi_bvalid,
     s00_axi_aresetn,
     s00_axi_wdata,
+    STATUS2,
     STATUS1,
-    s00_axi_awvalid,
-    s00_axi_wvalid,
     s00_axi_aclk,
     s00_axi_awaddr,
     s00_axi_wstrb,
     s00_axi_araddr,
+    s00_axi_awvalid,
+    s00_axi_wvalid,
     s00_axi_arvalid,
     s00_axi_bready,
     s00_axi_rready);
   output START;
-  output S_AXI_WREADY;
   output S_AXI_AWREADY;
+  output s00_axi_wready;
   output [31:0]INPUT_ADDRESS;
   output [31:0]OUTPUT_ADDRESS;
   output S_AXI_ARREADY;
@@ -155,13 +158,14 @@ module design_1_myip_0_0_myip_v1_0
   output s00_axi_bvalid;
   input s00_axi_aresetn;
   input [31:0]s00_axi_wdata;
+  input [31:0]STATUS2;
   input [31:0]STATUS1;
-  input s00_axi_awvalid;
-  input s00_axi_wvalid;
   input s00_axi_aclk;
   input [2:0]s00_axi_awaddr;
   input [3:0]s00_axi_wstrb;
   input [2:0]s00_axi_araddr;
+  input s00_axi_awvalid;
+  input s00_axi_wvalid;
   input s00_axi_arvalid;
   input s00_axi_bready;
   input s00_axi_rready;
@@ -170,9 +174,9 @@ module design_1_myip_0_0_myip_v1_0
   wire [31:0]OUTPUT_ADDRESS;
   wire START;
   wire [31:0]STATUS1;
+  wire [31:0]STATUS2;
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
-  wire S_AXI_WREADY;
   wire s00_axi_aclk;
   wire [2:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -185,6 +189,7 @@ module design_1_myip_0_0_myip_v1_0
   wire s00_axi_rready;
   wire s00_axi_rvalid;
   wire [31:0]s00_axi_wdata;
+  wire s00_axi_wready;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
 
@@ -193,9 +198,9 @@ module design_1_myip_0_0_myip_v1_0
         .OUTPUT_ADDRESS(OUTPUT_ADDRESS),
         .START(START),
         .STATUS1(STATUS1),
+        .STATUS2(STATUS2),
         .S_AXI_ARREADY(S_AXI_ARREADY),
         .S_AXI_AWREADY(S_AXI_AWREADY),
-        .S_AXI_WREADY(S_AXI_WREADY),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -208,6 +213,7 @@ module design_1_myip_0_0_myip_v1_0
         .s00_axi_rready(s00_axi_rready),
         .s00_axi_rvalid(s00_axi_rvalid),
         .s00_axi_wdata(s00_axi_wdata),
+        .s00_axi_wready(s00_axi_wready),
         .s00_axi_wstrb(s00_axi_wstrb),
         .s00_axi_wvalid(s00_axi_wvalid));
 endmodule
@@ -215,8 +221,8 @@ endmodule
 (* ORIG_REF_NAME = "myip_v1_0_S00_AXI" *) 
 module design_1_myip_0_0_myip_v1_0_S00_AXI
    (START,
-    S_AXI_WREADY,
     S_AXI_AWREADY,
+    s00_axi_wready,
     INPUT_ADDRESS,
     OUTPUT_ADDRESS,
     S_AXI_ARREADY,
@@ -225,19 +231,20 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
     s00_axi_bvalid,
     s00_axi_aresetn,
     s00_axi_wdata,
+    STATUS2,
     STATUS1,
-    s00_axi_awvalid,
-    s00_axi_wvalid,
     s00_axi_aclk,
     s00_axi_awaddr,
     s00_axi_wstrb,
     s00_axi_araddr,
+    s00_axi_awvalid,
+    s00_axi_wvalid,
     s00_axi_arvalid,
     s00_axi_bready,
     s00_axi_rready);
   output START;
-  output S_AXI_WREADY;
   output S_AXI_AWREADY;
+  output s00_axi_wready;
   output [31:0]INPUT_ADDRESS;
   output [31:0]OUTPUT_ADDRESS;
   output S_AXI_ARREADY;
@@ -246,13 +253,14 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
   output s00_axi_bvalid;
   input s00_axi_aresetn;
   input [31:0]s00_axi_wdata;
+  input [31:0]STATUS2;
   input [31:0]STATUS1;
-  input s00_axi_awvalid;
-  input s00_axi_wvalid;
   input s00_axi_aclk;
   input [2:0]s00_axi_awaddr;
   input [3:0]s00_axi_wstrb;
   input [2:0]s00_axi_araddr;
+  input s00_axi_awvalid;
+  input s00_axi_wvalid;
   input s00_axi_arvalid;
   input s00_axi_bready;
   input s00_axi_rready;
@@ -261,9 +269,9 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
   wire [31:0]OUTPUT_ADDRESS;
   wire START;
   wire [31:0]STATUS1;
+  wire [31:0]STATUS2;
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
-  wire S_AXI_WREADY;
   wire aw_en_i_1_n_0;
   wire aw_en_reg_n_0;
   wire axi_arready0;
@@ -337,6 +345,7 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
   wire axi_wready0;
   wire [2:0]p_0_in;
   wire [31:7]p_1_in;
+  wire [0:0]p_2_in;
   wire [31:0]reg_data_out;
   wire s00_axi_aclk;
   wire [2:0]s00_axi_araddr;
@@ -350,6 +359,7 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
   wire s00_axi_rready;
   wire s00_axi_rvalid;
   wire [31:0]s00_axi_wdata;
+  wire s00_axi_wready;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
   wire [2:0]sel0;
@@ -434,12 +444,41 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
   wire \slv_reg3[9]_i_1_n_0 ;
   wire [31:0]slv_reg4;
   wire \slv_reg4[0]_i_1_n_0 ;
-  wire \slv_reg4[0]_i_2_n_0 ;
+  wire \slv_reg4[10]_i_1_n_0 ;
+  wire \slv_reg4[11]_i_1_n_0 ;
+  wire \slv_reg4[12]_i_1_n_0 ;
+  wire \slv_reg4[13]_i_1_n_0 ;
+  wire \slv_reg4[14]_i_1_n_0 ;
   wire \slv_reg4[15]_i_1_n_0 ;
+  wire \slv_reg4[15]_i_2_n_0 ;
+  wire \slv_reg4[16]_i_1_n_0 ;
+  wire \slv_reg4[17]_i_1_n_0 ;
+  wire \slv_reg4[18]_i_1_n_0 ;
+  wire \slv_reg4[19]_i_1_n_0 ;
+  wire \slv_reg4[1]_i_1_n_0 ;
+  wire \slv_reg4[20]_i_1_n_0 ;
+  wire \slv_reg4[21]_i_1_n_0 ;
+  wire \slv_reg4[22]_i_1_n_0 ;
   wire \slv_reg4[23]_i_1_n_0 ;
+  wire \slv_reg4[23]_i_2_n_0 ;
+  wire \slv_reg4[24]_i_1_n_0 ;
+  wire \slv_reg4[25]_i_1_n_0 ;
+  wire \slv_reg4[26]_i_1_n_0 ;
+  wire \slv_reg4[27]_i_1_n_0 ;
+  wire \slv_reg4[28]_i_1_n_0 ;
+  wire \slv_reg4[29]_i_1_n_0 ;
+  wire \slv_reg4[2]_i_1_n_0 ;
+  wire \slv_reg4[30]_i_1_n_0 ;
   wire \slv_reg4[31]_i_1_n_0 ;
+  wire \slv_reg4[31]_i_2_n_0 ;
+  wire \slv_reg4[3]_i_1_n_0 ;
+  wire \slv_reg4[4]_i_1_n_0 ;
+  wire \slv_reg4[5]_i_1_n_0 ;
+  wire \slv_reg4[6]_i_1_n_0 ;
   wire \slv_reg4[7]_i_1_n_0 ;
-  wire [0:0]slv_reg4_0;
+  wire \slv_reg4[7]_i_2_n_0 ;
+  wire \slv_reg4[8]_i_1_n_0 ;
+  wire \slv_reg4[9]_i_1_n_0 ;
   wire [31:0]slv_reg5;
   wire \slv_reg5[15]_i_1_n_0 ;
   wire \slv_reg5[23]_i_1_n_0 ;
@@ -539,15 +578,12 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .D(axi_awready0),
         .Q(S_AXI_AWREADY),
         .R(\slv_reg1[31]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000FFFF80008000)) 
+  LUT3 #(
+    .INIT(8'h3A)) 
     axi_bvalid_i_1
-       (.I0(s00_axi_awvalid),
-        .I1(S_AXI_WREADY),
-        .I2(S_AXI_AWREADY),
-        .I3(s00_axi_wvalid),
-        .I4(s00_axi_bready),
-        .I5(s00_axi_bvalid),
+       (.I0(slv_reg_wren__2),
+        .I1(s00_axi_bready),
+        .I2(s00_axi_bvalid),
         .O(axi_bvalid_i_1_n_0));
   FDRE axi_bvalid_reg
        (.C(s00_axi_aclk),
@@ -563,7 +599,7 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .I2(sel0[1]),
         .I3(INPUT_ADDRESS[0]),
         .I4(sel0[0]),
-        .I5(slv_reg4_0),
+        .I5(p_2_in),
         .O(\axi_rdata[0]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1567,13 +1603,13 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
        (.I0(s00_axi_awvalid),
         .I1(s00_axi_wvalid),
         .I2(aw_en_reg_n_0),
-        .I3(S_AXI_WREADY),
+        .I3(s00_axi_wready),
         .O(axi_wready0));
   FDRE axi_wready_reg
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .D(axi_wready0),
-        .Q(S_AXI_WREADY),
+        .Q(s00_axi_wready),
         .R(\slv_reg1[31]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hFFFB000000080000)) 
@@ -1583,7 +1619,7 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .I2(p_0_in[2]),
         .I3(\slv_reg0[0]_i_2_n_0 ),
         .I4(slv_reg_wren__2),
-        .I5(slv_reg4_0),
+        .I5(p_2_in),
         .O(\slv_reg0[0]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
@@ -1631,7 +1667,7 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .D(\slv_reg0[0]_i_1_n_0 ),
-        .Q(slv_reg4_0),
+        .Q(p_2_in),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg0_reg[10] 
        (.C(s00_axi_aclk),
@@ -2280,65 +2316,53 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .D(s00_axi_wdata[9]),
         .Q(OUTPUT_ADDRESS[9]),
         .R(\slv_reg1[31]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[0]_i_1 
        (.I0(s00_axi_wdata[0]),
         .I1(STATUS1[0]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[10]_i_1 
        (.I0(s00_axi_wdata[10]),
         .I1(STATUS1[10]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[10]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[11]_i_1 
        (.I0(s00_axi_wdata[11]),
         .I1(STATUS1[11]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[11]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[12]_i_1 
        (.I0(s00_axi_wdata[12]),
         .I1(STATUS1[12]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[12]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[13]_i_1 
        (.I0(s00_axi_wdata[13]),
         .I1(STATUS1[13]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[13]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[14]_i_1 
        (.I0(s00_axi_wdata[14]),
         .I1(STATUS1[14]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[14]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h4000FFFF)) 
@@ -2349,95 +2373,77 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .I3(s00_axi_wstrb[1]),
         .I4(slv_reg_wren__2),
         .O(\slv_reg3[15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[15]_i_2 
        (.I0(s00_axi_wdata[15]),
         .I1(STATUS1[15]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[16]_i_1 
        (.I0(s00_axi_wdata[16]),
         .I1(STATUS1[16]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[16]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[17]_i_1 
        (.I0(s00_axi_wdata[17]),
         .I1(STATUS1[17]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[17]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[18]_i_1 
        (.I0(s00_axi_wdata[18]),
         .I1(STATUS1[18]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[18]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[19]_i_1 
        (.I0(s00_axi_wdata[19]),
         .I1(STATUS1[19]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[19]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[1]_i_1 
        (.I0(s00_axi_wdata[1]),
         .I1(STATUS1[1]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[1]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[20]_i_1 
        (.I0(s00_axi_wdata[20]),
         .I1(STATUS1[20]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[20]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[21]_i_1 
        (.I0(s00_axi_wdata[21]),
         .I1(STATUS1[21]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[21]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[22]_i_1 
        (.I0(s00_axi_wdata[22]),
         .I1(STATUS1[22]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[22]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h4000FFFF)) 
@@ -2448,95 +2454,77 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .I3(s00_axi_wstrb[2]),
         .I4(slv_reg_wren__2),
         .O(\slv_reg3[23]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[23]_i_2 
        (.I0(s00_axi_wdata[23]),
         .I1(STATUS1[23]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[23]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[24]_i_1 
        (.I0(s00_axi_wdata[24]),
         .I1(STATUS1[24]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[24]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[25]_i_1 
        (.I0(s00_axi_wdata[25]),
         .I1(STATUS1[25]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[25]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[26]_i_1 
        (.I0(s00_axi_wdata[26]),
         .I1(STATUS1[26]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[26]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[27]_i_1 
        (.I0(s00_axi_wdata[27]),
         .I1(STATUS1[27]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[27]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[28]_i_1 
        (.I0(s00_axi_wdata[28]),
         .I1(STATUS1[28]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[28]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[29]_i_1 
        (.I0(s00_axi_wdata[29]),
         .I1(STATUS1[29]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[29]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[2]_i_1 
        (.I0(s00_axi_wdata[2]),
         .I1(STATUS1[2]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[2]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[30]_i_1 
        (.I0(s00_axi_wdata[30]),
         .I1(STATUS1[30]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[30]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h4000FFFF)) 
@@ -2547,55 +2535,45 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .I3(s00_axi_wstrb[3]),
         .I4(slv_reg_wren__2),
         .O(\slv_reg3[31]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[31]_i_2 
        (.I0(s00_axi_wdata[31]),
         .I1(STATUS1[31]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[31]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[3]_i_1 
        (.I0(s00_axi_wdata[3]),
         .I1(STATUS1[3]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[3]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[4]_i_1 
        (.I0(s00_axi_wdata[4]),
         .I1(STATUS1[4]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[4]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[5]_i_1 
        (.I0(s00_axi_wdata[5]),
         .I1(STATUS1[5]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[5]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[6]_i_1 
        (.I0(s00_axi_wdata[6]),
         .I1(STATUS1[6]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[6]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h4000FFFF)) 
@@ -2606,35 +2584,29 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .I3(s00_axi_wstrb[0]),
         .I4(slv_reg_wren__2),
         .O(\slv_reg3[7]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[7]_i_2 
        (.I0(s00_axi_wdata[7]),
         .I1(STATUS1[7]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[7]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[8]_i_1 
        (.I0(s00_axi_wdata[8]),
         .I1(STATUS1[8]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[8]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hACCCCCCCCCCCCCCC)) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg3[9]_i_1 
        (.I0(s00_axi_wdata[9]),
         .I1(STATUS1[9]),
-        .I2(s00_axi_awvalid),
-        .I3(S_AXI_WREADY),
-        .I4(S_AXI_AWREADY),
-        .I5(s00_axi_wvalid),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg3[9]_i_1_n_0 ));
   FDRE \slv_reg3_reg[0] 
        (.C(s00_axi_aclk),
@@ -2828,248 +2800,488 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .D(\slv_reg3[9]_i_1_n_0 ),
         .Q(slv_reg3[9]),
         .R(\slv_reg1[31]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFEFFFEFF02FF0200)) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
     \slv_reg4[0]_i_1 
        (.I0(s00_axi_wdata[0]),
-        .I1(\slv_reg4[0]_i_2_n_0 ),
-        .I2(\slv_reg0[0]_i_2_n_0 ),
-        .I3(slv_reg_wren__2),
-        .I4(slv_reg4_0),
-        .I5(slv_reg4[0]),
+        .I1(STATUS2[0]),
+        .I2(slv_reg_wren__2),
         .O(\slv_reg4[0]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \slv_reg4[0]_i_2 
-       (.I0(p_0_in[2]),
-        .I1(s00_axi_wstrb[0]),
-        .O(\slv_reg4[0]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[10]_i_1 
+       (.I0(s00_axi_wdata[10]),
+        .I1(STATUS2[10]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[10]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[11]_i_1 
+       (.I0(s00_axi_wdata[11]),
+        .I1(STATUS2[11]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[11]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[12]_i_1 
+       (.I0(s00_axi_wdata[12]),
+        .I1(STATUS2[12]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[12]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[13]_i_1 
+       (.I0(s00_axi_wdata[13]),
+        .I1(STATUS2[13]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[13]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[14]_i_1 
+       (.I0(s00_axi_wdata[14]),
+        .I1(STATUS2[14]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[14]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h02000000)) 
+    .INIT(32'h1000FFFF)) 
     \slv_reg4[15]_i_1 
-       (.I0(slv_reg_wren__2),
-        .I1(p_0_in[1]),
-        .I2(p_0_in[0]),
-        .I3(p_0_in[2]),
-        .I4(s00_axi_wstrb[1]),
+       (.I0(p_0_in[1]),
+        .I1(p_0_in[0]),
+        .I2(p_0_in[2]),
+        .I3(s00_axi_wstrb[1]),
+        .I4(slv_reg_wren__2),
         .O(\slv_reg4[15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[15]_i_2 
+       (.I0(s00_axi_wdata[15]),
+        .I1(STATUS2[15]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[16]_i_1 
+       (.I0(s00_axi_wdata[16]),
+        .I1(STATUS2[16]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[16]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[17]_i_1 
+       (.I0(s00_axi_wdata[17]),
+        .I1(STATUS2[17]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[17]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[18]_i_1 
+       (.I0(s00_axi_wdata[18]),
+        .I1(STATUS2[18]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[18]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[19]_i_1 
+       (.I0(s00_axi_wdata[19]),
+        .I1(STATUS2[19]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[19]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[1]_i_1 
+       (.I0(s00_axi_wdata[1]),
+        .I1(STATUS2[1]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[20]_i_1 
+       (.I0(s00_axi_wdata[20]),
+        .I1(STATUS2[20]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[20]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[21]_i_1 
+       (.I0(s00_axi_wdata[21]),
+        .I1(STATUS2[21]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[21]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[22]_i_1 
+       (.I0(s00_axi_wdata[22]),
+        .I1(STATUS2[22]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[22]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h02000000)) 
+    .INIT(32'h1000FFFF)) 
     \slv_reg4[23]_i_1 
-       (.I0(slv_reg_wren__2),
-        .I1(p_0_in[1]),
-        .I2(p_0_in[0]),
-        .I3(p_0_in[2]),
-        .I4(s00_axi_wstrb[2]),
+       (.I0(p_0_in[1]),
+        .I1(p_0_in[0]),
+        .I2(p_0_in[2]),
+        .I3(s00_axi_wstrb[2]),
+        .I4(slv_reg_wren__2),
         .O(\slv_reg4[23]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[23]_i_2 
+       (.I0(s00_axi_wdata[23]),
+        .I1(STATUS2[23]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[23]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[24]_i_1 
+       (.I0(s00_axi_wdata[24]),
+        .I1(STATUS2[24]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[24]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[25]_i_1 
+       (.I0(s00_axi_wdata[25]),
+        .I1(STATUS2[25]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[25]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[26]_i_1 
+       (.I0(s00_axi_wdata[26]),
+        .I1(STATUS2[26]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[26]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[27]_i_1 
+       (.I0(s00_axi_wdata[27]),
+        .I1(STATUS2[27]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[27]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[28]_i_1 
+       (.I0(s00_axi_wdata[28]),
+        .I1(STATUS2[28]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[28]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[29]_i_1 
+       (.I0(s00_axi_wdata[29]),
+        .I1(STATUS2[29]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[29]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[2]_i_1 
+       (.I0(s00_axi_wdata[2]),
+        .I1(STATUS2[2]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[30]_i_1 
+       (.I0(s00_axi_wdata[30]),
+        .I1(STATUS2[30]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[30]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h02000000)) 
+    .INIT(32'h1000FFFF)) 
     \slv_reg4[31]_i_1 
-       (.I0(slv_reg_wren__2),
-        .I1(p_0_in[1]),
-        .I2(p_0_in[0]),
-        .I3(p_0_in[2]),
-        .I4(s00_axi_wstrb[3]),
+       (.I0(p_0_in[1]),
+        .I1(p_0_in[0]),
+        .I2(p_0_in[2]),
+        .I3(s00_axi_wstrb[3]),
+        .I4(slv_reg_wren__2),
         .O(\slv_reg4[31]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[31]_i_2 
+       (.I0(s00_axi_wdata[31]),
+        .I1(STATUS2[31]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[31]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[3]_i_1 
+       (.I0(s00_axi_wdata[3]),
+        .I1(STATUS2[3]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[3]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[4]_i_1 
+       (.I0(s00_axi_wdata[4]),
+        .I1(STATUS2[4]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[4]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[5]_i_1 
+       (.I0(s00_axi_wdata[5]),
+        .I1(STATUS2[5]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[5]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[6]_i_1 
+       (.I0(s00_axi_wdata[6]),
+        .I1(STATUS2[6]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[6]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h02000000)) 
+    .INIT(32'h1000FFFF)) 
     \slv_reg4[7]_i_1 
-       (.I0(slv_reg_wren__2),
-        .I1(p_0_in[1]),
-        .I2(p_0_in[0]),
-        .I3(p_0_in[2]),
-        .I4(s00_axi_wstrb[0]),
+       (.I0(p_0_in[1]),
+        .I1(p_0_in[0]),
+        .I2(p_0_in[2]),
+        .I3(s00_axi_wstrb[0]),
+        .I4(slv_reg_wren__2),
         .O(\slv_reg4[7]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[7]_i_2 
+       (.I0(s00_axi_wdata[7]),
+        .I1(STATUS2[7]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[7]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[8]_i_1 
+       (.I0(s00_axi_wdata[8]),
+        .I1(STATUS2[8]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[8]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \slv_reg4[9]_i_1 
+       (.I0(s00_axi_wdata[9]),
+        .I1(STATUS2[9]),
+        .I2(slv_reg_wren__2),
+        .O(\slv_reg4[9]_i_1_n_0 ));
   FDRE \slv_reg4_reg[0] 
        (.C(s00_axi_aclk),
-        .CE(1'b1),
+        .CE(\slv_reg4[7]_i_1_n_0 ),
         .D(\slv_reg4[0]_i_1_n_0 ),
         .Q(slv_reg4[0]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[10] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[10]),
+        .D(\slv_reg4[10]_i_1_n_0 ),
         .Q(slv_reg4[10]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[11] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[11]),
+        .D(\slv_reg4[11]_i_1_n_0 ),
         .Q(slv_reg4[11]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[12] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[12]),
+        .D(\slv_reg4[12]_i_1_n_0 ),
         .Q(slv_reg4[12]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[13] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[13]),
+        .D(\slv_reg4[13]_i_1_n_0 ),
         .Q(slv_reg4[13]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[14] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[14]),
+        .D(\slv_reg4[14]_i_1_n_0 ),
         .Q(slv_reg4[14]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[15] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[15]),
+        .D(\slv_reg4[15]_i_2_n_0 ),
         .Q(slv_reg4[15]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[16] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[16]),
+        .D(\slv_reg4[16]_i_1_n_0 ),
         .Q(slv_reg4[16]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[17] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[17]),
+        .D(\slv_reg4[17]_i_1_n_0 ),
         .Q(slv_reg4[17]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[18] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[18]),
+        .D(\slv_reg4[18]_i_1_n_0 ),
         .Q(slv_reg4[18]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[19] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[19]),
+        .D(\slv_reg4[19]_i_1_n_0 ),
         .Q(slv_reg4[19]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[1] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[1]),
+        .D(\slv_reg4[1]_i_1_n_0 ),
         .Q(slv_reg4[1]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[20] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[20]),
+        .D(\slv_reg4[20]_i_1_n_0 ),
         .Q(slv_reg4[20]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[21] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[21]),
+        .D(\slv_reg4[21]_i_1_n_0 ),
         .Q(slv_reg4[21]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[22] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[22]),
+        .D(\slv_reg4[22]_i_1_n_0 ),
         .Q(slv_reg4[22]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[23] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[23]_i_1_n_0 ),
-        .D(s00_axi_wdata[23]),
+        .D(\slv_reg4[23]_i_2_n_0 ),
         .Q(slv_reg4[23]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[24] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[24]),
+        .D(\slv_reg4[24]_i_1_n_0 ),
         .Q(slv_reg4[24]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[25] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[25]),
+        .D(\slv_reg4[25]_i_1_n_0 ),
         .Q(slv_reg4[25]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[26] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[26]),
+        .D(\slv_reg4[26]_i_1_n_0 ),
         .Q(slv_reg4[26]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[27] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[27]),
+        .D(\slv_reg4[27]_i_1_n_0 ),
         .Q(slv_reg4[27]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[28] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[28]),
+        .D(\slv_reg4[28]_i_1_n_0 ),
         .Q(slv_reg4[28]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[29] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[29]),
+        .D(\slv_reg4[29]_i_1_n_0 ),
         .Q(slv_reg4[29]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[2] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[2]),
+        .D(\slv_reg4[2]_i_1_n_0 ),
         .Q(slv_reg4[2]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[30] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[30]),
+        .D(\slv_reg4[30]_i_1_n_0 ),
         .Q(slv_reg4[30]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[31] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[31]_i_1_n_0 ),
-        .D(s00_axi_wdata[31]),
+        .D(\slv_reg4[31]_i_2_n_0 ),
         .Q(slv_reg4[31]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[3] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[3]),
+        .D(\slv_reg4[3]_i_1_n_0 ),
         .Q(slv_reg4[3]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[4] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[4]),
+        .D(\slv_reg4[4]_i_1_n_0 ),
         .Q(slv_reg4[4]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[5] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[5]),
+        .D(\slv_reg4[5]_i_1_n_0 ),
         .Q(slv_reg4[5]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[6] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[6]),
+        .D(\slv_reg4[6]_i_1_n_0 ),
         .Q(slv_reg4[6]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[7] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[7]_i_1_n_0 ),
-        .D(s00_axi_wdata[7]),
+        .D(\slv_reg4[7]_i_2_n_0 ),
         .Q(slv_reg4[7]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[8] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[8]),
+        .D(\slv_reg4[8]_i_1_n_0 ),
         .Q(slv_reg4[8]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   FDRE \slv_reg4_reg[9] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg4[15]_i_1_n_0 ),
-        .D(s00_axi_wdata[9]),
+        .D(\slv_reg4[9]_i_1_n_0 ),
         .Q(slv_reg4[9]),
         .R(\slv_reg1[31]_i_1_n_0 ));
   LUT5 #(
@@ -3771,15 +3983,12 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
         .D(start_ff),
         .Q(start_ff),
         .S(start3_out));
-  LUT6 #(
-    .INIT(64'h7FFF000000000000)) 
+  LUT3 #(
+    .INIT(8'h40)) 
     start_i_1
-       (.I0(s00_axi_awvalid),
-        .I1(S_AXI_WREADY),
-        .I2(S_AXI_AWREADY),
-        .I3(s00_axi_wvalid),
-        .I4(s00_axi_aresetn),
-        .I5(slv_reg4_0),
+       (.I0(slv_reg_wren__2),
+        .I1(s00_axi_aresetn),
+        .I2(p_2_in),
         .O(start3_out));
   LUT4 #(
     .INIT(16'hAA2A)) 
@@ -3793,7 +4002,7 @@ module design_1_myip_0_0_myip_v1_0_S00_AXI
     .INIT(16'h8000)) 
     start_i_3
        (.I0(s00_axi_awvalid),
-        .I1(S_AXI_WREADY),
+        .I1(s00_axi_wready),
         .I2(S_AXI_AWREADY),
         .I3(s00_axi_wvalid),
         .O(slv_reg_wren__2));

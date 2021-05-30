@@ -193,7 +193,7 @@ proc create_root_design { parentCell } {
  ] $blk_mem_gen_0
 
   # Create instance: myip_0, and set properties
-  set myip_0 [ create_bd_cell -type ip -vlnv user.org:user:myip:1.1 myip_0 ]
+  set myip_0 [ create_bd_cell -type ip -vlnv user.org:user:myip:1.11 myip_0 ]
 
   # Create instance: rst_ps8_0_100M, and set properties
   set rst_ps8_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps8_0_100M ]
